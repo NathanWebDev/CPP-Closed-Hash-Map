@@ -15,4 +15,6 @@ int main()
     cout << "3. Change fruit amount" << endl;
     cout << "4. Check fruit basket" << endl;
 	cout << "5. Exit" << endl;
+
+    return 0;
 }
