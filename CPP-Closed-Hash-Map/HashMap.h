@@ -70,22 +70,6 @@ public:
 		}
 	}
 
-	bool find(const Fruit& fruit, Id& id_out) const {
-		size_t index = hash(fruit);
-		for (size_t i = 0; i < capacity; ++i) {
-			size_t current_index = probe(index, i);
-			const Entry& entry = fruitBasket[current_index];
-			if (!entry.is_occupied && !entry.is_deleted) {
-				return false;
-			}
-			if (entry.is_occupied && !entry.is_deleted && entry.fruit == fruit) {
-				id_out = entry.id;
-				return true;
-			}
-		}
-		return false;
-	}
-
 	bool erase(const Fruit& fruit) {
 		size_t index = hash(fruit);
 		for (size_t i = 0; i < capacity; ++i) {
